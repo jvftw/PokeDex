@@ -24,6 +24,9 @@ fetch(url)
     .then((response) => response.json())
     .then((jsonBody) => jsonBody.results)
     .then((pokemonList) => {
-        debugger    
-        console.log(pokemonList)})
+        for (let i = 0; i < pokemonList.length; i++) {
+            const pokemon = pokemonList[i];
+            console.log(convertPokemonToLi(pokemon))
+        }   
+    })
     .catch((error) => console.error(error))
